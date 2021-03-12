@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="MAIN" Id="{ce4a67e8-59fc-4eaa-9b91-5524901cbcd0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	{IF defined (Variant3)}
+	stAxis1	: EP7402_REF;
+	stAxis2	: EP7402_REF;
+	stAxis3	: EP7402_REF;
+	
+	{ELSE}
+	stAxis1	: AXIS_REF;
+	stAxis2	: AXIS_REF;
+	stAxis3	: AXIS_REF;
+	stAxis4	: AXIS_REF;
+	{END_IF}
+	{IF defined (Group1)}
+	stAxis5	: AXIS_REF;
+	stAxis6	: AXIS_REF;
+	stAxis7	: AXIS_REF;
+	stAxis8	: AXIS_REF;
+	{END_IF}
+	
+	(*{IF defined (Variant1)}
+	FB_ConveyerSequence	:	FB_LongCarryDrop;
+	{ELSIF defined (Variant2)}
+	FB_ConveyerSequence	:	FB_CarryDrop(Axis1 := stAxis1,Axis2 := stAxis2,Axis3 := stAxis3, Axis4 :=stAxis4);
+	{ELSIF defined (Variant3)}
+	FB_ConveyerSequence :	FB_LongTransfer(Axis1 := stAxis1,Axis2 := stAxis2,Axis3 := stAxis3);;
+	{ELSE}
+	FB_ConveyerSequence	:	FB_CarryDrop(Axis1 := stAxis1, Axis2 := stAxis2, Axis3 := stAxis3, Axis4 :=stAxis4, Axis5 := stAxis5, Axis6 := stAxis6, Axis7 := stAxis7, Axis8 := stAxis8);
+	{END_IF}
+*)
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

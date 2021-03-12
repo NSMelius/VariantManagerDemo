@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="Global_Constants" Id="{8440acae-8e32-4e72-a6fd-98621dbde0f8}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	nMAXGroups	: UINT := 2;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

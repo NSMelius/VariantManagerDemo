@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Itf Name="I_MDRConveyer" Id="{40b25503-fc79-4bde-ae54-d6a5fa4d8deb}">
+    <Declaration><![CDATA[INTERFACE I_MDRConveyer EXTENDS I_Conveyer
+]]></Declaration>
+    <Property Name="MDRController" Id="{ce28b76a-cc76-4b36-a9d2-1b00ad0ca412}">
+      <Declaration><![CDATA[PROPERTY MDRController : EP7402_REF]]></Declaration>
+      <Get Name="Get" Id="{3f16da1e-bbaa-45e0-859e-d14c91d19981}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{3135e681-44ac-48aa-ad53-d4aaa1ed4eea}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

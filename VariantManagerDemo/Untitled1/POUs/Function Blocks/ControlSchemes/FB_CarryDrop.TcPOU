@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_CarryDrop" Id="{1e707bf1-7ec5-4b8f-bb13-373fa07d5c06}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CarryDrop IMPLEMENTS I_ControlScheme
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbIncline		: FB_InclineNcConveyer;
+	fbShortStraight	: FB_SsNcConveyer;
+	{IF defined (Group1)}
+	fbShortStraight2	: FB_SsNcConveyer;
+	fbDecline		: FB_DeclineNcConveyer;
+	{END_IF}
+	
+	nState	: INT := 0;
+END_VAR
+VAR_IN_OUT
+	Axis1	: AXIS_REF;
+	Axis2	: AXIS_REF;
+	Axis3	: AXIS_REF;
+	Axis4	: AXIS_REF;
+	{IF defined (group1)}
+	Axis5	: AXIS_REF;
+	Axis6	: AXIS_REF;
+	Axis7	: AXIS_REF;
+	Axis8	: AXIS_REF;
+	{END_IF}
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nState OF
+0:
+	//TODO:Assign Axes
+	nState :=1;
+1: 
+	fbIncline.Start();
+	fbShortStraight.Start();
+	{IF defined (Group1)}
+	fbShortStraight2.Start();
+	fbDecline.Start();
+	{END_IF}
+2:
+	fbIncline.Execute();
+	fbShortStraight.Execute();
+	{IF defined (Group1)}
+	fbShortStraight2.Execute();
+	fbDecline.Execute();
+	{END_IF}
+	nState := 3;
+3:
+	//TO-DO call Stop methods
+	nState := 4;
+4:
+	//TODO: call Reset methods
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

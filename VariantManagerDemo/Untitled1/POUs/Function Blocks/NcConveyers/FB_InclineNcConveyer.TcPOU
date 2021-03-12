@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_InclineNcConveyer" Id="{039617c2-09d1-48f2-924d-30a1d8de7610}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_InclineNcConveyer IMPLEMENTS  I_NcConveyer
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	_Axis1	: AXIS_REF;
+	_Axis2	: AXIS_REF;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="Axis1" Id="{578c3221-2549-487a-a4cf-3542bdcc0704}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Axis1 : Tc2_MC2.AXIS_REF
+]]></Declaration>
+      <Get Name="Get" Id="{a0059718-2fda-45c8-9122-16ad0669a803}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Axis1 := _Axis1;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{2ced7e1f-10df-4176-9cf1-be761c8a87fc}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Axis1 := Axis1;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Axis2" Id="{e7927dde-6a89-46df-b3d9-3e3198d81ef3}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Axis2 : Tc2_MC2.AXIS_REF
+]]></Declaration>
+      <Get Name="Get" Id="{dbe625bd-b4c0-4905-9209-d984c7224e7b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Axis2 := _Axis2;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{24141ba3-f255-4d3c-b5df-4d7739dc2367}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Axis2 := Axis2; ]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Execute" Id="{0dca7dd4-1a6a-4325-a2b2-9925f7c3b015}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Execute : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Moving Incline-Belt','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{ed175c11-8418-4bb0-9337-ffb7d7fc633e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Reseting Incline-Belt','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{3e3fb0d1-25c9-41ca-8f0d-4f7a8e205ae1}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Powering Incline-Belt on','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{dfa773a2-bfc9-493b-a31c-ab29ba8de180}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Stopping Incline-Belt','');]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

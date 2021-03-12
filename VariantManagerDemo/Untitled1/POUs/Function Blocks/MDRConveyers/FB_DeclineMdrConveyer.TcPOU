@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_DeclineMdrConveyer" Id="{727fae8b-439f-4e2c-b09c-608ce3f3212c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DeclineMdrConveyer IMPLEMENTS  I_MDRConveyer
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	_Controller	: EP7402_REF;
+
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{1dd1545f-0666-4271-8920-ea566a687e79}">
+      <Declaration><![CDATA[METHOD Execute : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Moving Long-Straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="MDRController" Id="{c9bac534-8c4b-4ad6-a3c1-06aad1cea96c}">
+      <Declaration><![CDATA[
+PROPERTY MDRController : EP7402_REF
+]]></Declaration>
+      <Get Name="Get" Id="{5ec4a01b-8e4c-4061-a6de-b6d368336a42}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[MDRController := _Controller;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{fab36bdb-0f34-4208-9dd6-23c939e91cd3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Controller := MDRController;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Reset" Id="{cdb775dd-a953-4044-b33c-4f59433abb84}">
+      <Declaration><![CDATA[
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Reseting Long-straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{1b08430a-fbfc-4cfe-932c-dc3dc8372ab4}">
+      <Declaration><![CDATA[
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Powering on Long-straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{07b15d28-674e-48de-a188-11ca718c788a}">
+      <Declaration><![CDATA[
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Stopping Long-straight','');]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

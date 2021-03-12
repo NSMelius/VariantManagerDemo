@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="EP7402_REF" Id="{e41a4876-ed96-4689-861d-e491bef68390}">
+    <Declaration><![CDATA[
+TYPE EP7402_REF :
+STRUCT
+	stInputs	AT %I* : MDR_CONTROL.EP7402_Inputs;
+	stOutputs	AT %Q* : MDR_Control.EP7402_Outputs;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

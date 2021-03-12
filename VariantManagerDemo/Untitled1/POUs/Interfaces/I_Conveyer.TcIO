@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Itf Name="I_Conveyer" Id="{08117065-b66b-4d9c-9611-ef2904f3e77e}">
+    <Declaration><![CDATA[INTERFACE I_Conveyer
+]]></Declaration>
+    <Method Name="Execute" Id="{36b9bc42-952b-45a6-bf35-579e6beee228}">
+      <Declaration><![CDATA[METHOD Execute : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Reset" Id="{6731d12d-b0be-4fcf-b0cd-c561ccfd22b1}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{370f688d-0b94-4a1f-ba40-485bc7ab0760}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{797cf4d7-5904-4dcd-b0c2-ac1114075f80}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

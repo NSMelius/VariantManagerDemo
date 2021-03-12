@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_LongCarryDrop" Id="{2f14a790-8f93-410b-9662-b6d82260e85e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LongCarryDrop IMPLEMENTS I_ControlScheme
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbLongStraight1	: FB_LsNcConveyer;
+	fbLongStraight2	: FB_LsNcConveyer;
+	fbIncline		: FB_InclineNcConveyer;
+	fbShortStraight	: FB_SsNcConveyer;
+	nState 	: INT := 0;
+END_VAR
+VAR_IN_OUT
+	Axis1	: AXIS_REF;
+	Axis2	: AXIS_REF;
+	Axis3	: AXIS_REF;
+	Axis4	: AXIS_REF;
+	Axis5	: AXIS_REF;
+	Axis6	: AXIS_REF;
+	Axis7	: AXIS_REF;
+	Axis8	: AXIS_REF; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nState OF
+0:
+	//TODO:Assign Axes
+	nState :=1;
+1: 
+	fbLongStraight1.Start();
+	fbLongStraight2.Start();
+	fbIncline.Start();
+	fbShortStraight.Start();
+	
+	
+2:
+	fbLongStraight1.Execute();
+	fbLongStraight2.Execute();
+	fbIncline.Execute();
+	fbShortStraight.Execute();
+
+	nState := 3;
+3:
+	//TO-DO call Stop methods
+	nState := 4;
+4:
+	//TODO: call Reset methods
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

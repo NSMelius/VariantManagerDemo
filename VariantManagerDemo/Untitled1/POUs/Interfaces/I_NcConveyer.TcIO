@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Itf Name="I_NcConveyer" Id="{117ba5e6-0593-47bb-81fe-fa0ad1622858}">
+    <Declaration><![CDATA[INTERFACE I_NcConveyer EXTENDS I_Conveyer
+]]></Declaration>
+    <Property Name="Axis1" Id="{c71ad056-3473-4102-bd50-38f19a753c05}">
+      <Declaration><![CDATA[PROPERTY Axis1 : AXIS_REF]]></Declaration>
+      <Get Name="Get" Id="{5fe67993-b685-457f-a51e-fcf9e4fa605d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{20d840cb-3062-4686-968b-6aaf61870b25}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Axis2" Id="{c5b9b783-e4e1-4ff9-8f37-554ae8af245f}">
+      <Declaration><![CDATA[PROPERTY Axis2 : AXIS_REF]]></Declaration>
+      <Get Name="Get" Id="{9846f172-fa37-46cf-bcf1-665672edef9c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{d6491bc4-95f5-4c0d-b552-bbb3010796a0}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

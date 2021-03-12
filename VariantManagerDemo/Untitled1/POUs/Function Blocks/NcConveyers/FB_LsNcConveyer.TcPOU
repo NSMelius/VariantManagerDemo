@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_LsNcConveyer" Id="{f8494908-811a-4147-8e99-dfe773f3f21a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LsNcConveyer IMPLEMENTS  I_NcConveyer
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	_Axis1	: AXIS_REF;
+	_Axis2	: AXIS_REF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="Axis1" Id="{1a63d534-32e7-455b-822e-de5e691825df}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Axis1 : Tc2_MC2.AXIS_REF
+]]></Declaration>
+      <Get Name="Get" Id="{ccd6ebd2-ca0d-4be4-9e5b-ecba35d3ddcd}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Axis1 := _Axis1;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{7ea011ef-45ff-406a-b79c-d221a8ee607e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Axis1 := Axis1;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Axis2" Id="{9c2f9899-0981-4938-a4b0-212eedfd04ef}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Axis2 : Tc2_MC2.AXIS_REF
+]]></Declaration>
+      <Get Name="Get" Id="{6e434e26-17e1-4275-a641-5f52737578d1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Axis2 := _Axis2;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{2308371b-0827-4bd1-bb81-aa69dee69847}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Axis2 := Axis2;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Execute" Id="{23830e75-c0f1-421a-a62f-975e225b8db6}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Execute : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Moving Long-Straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{817208e6-153b-4101-b4c3-5bcedf1ba8eb}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Reseting Long-Straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{8e0d8745-d3db-4ed1-b2dc-b482c1da8d15}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Powering on Long-Straight','');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{2337a735-a818-401f-8c32-bf763b66630b}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Stopping Long-Straight','');]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

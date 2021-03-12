@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_LongTransfer" Id="{48ec9a18-fd00-46eb-9f61-e8dc50e77b27}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LongTransfer IMPLEMENTS I_ControlScheme
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbDecline	: FB_DeclineMdrConveyer;
+	fbLongStraight1		: FB_LsMdrConveyer;
+	fbLongStraight2		: FB_LsMdrConveyer;
+	nState: INT;
+END_VAR
+VAR_IN_OUT
+	Axis1	:	EP7402_REF;
+	Axis2	:	EP7402_REF;
+	Axis3	:	EP7402_REF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nState OF
+0:
+	//TODO:Assign Axes
+	nState :=1;
+1: 
+	fbLongStraight1.Start();
+	fbLongStraight2.Start();
+	fbDecline.Start();
+	
+	
+	
+2:
+	fbLongStraight1.Execute();
+	fbLongStraight2.Execute();
+	fbDecline.Execute();
+	
+
+	nState := 3;
+3:
+	//TO-DO call Stop methods
+	nState := 4;
+4:
+	//TODO: call Reset methods
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
