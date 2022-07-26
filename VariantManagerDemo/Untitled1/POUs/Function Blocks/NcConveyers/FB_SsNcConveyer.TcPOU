@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="FB_SsNcConveyer" Id="{5570e42e-7ebf-4c22-865f-666c9a6f8ba2}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SsNcConveyer IMPLEMENTS I_NcConveyer
 VAR_INPUT
@@ -16,7 +16,7 @@ END_VAR
       <ST><![CDATA[]]></ST>
     </Implementation>
     <Property Name="Axis1" Id="{46e1d492-b2fe-4510-b67a-6641f6ec1782}">
-      <Declaration><![CDATA[{error 'add property implementation or delete property to use base implementation'}
+      <Declaration><![CDATA[
 PROPERTY Axis1 : Tc2_MC2.AXIS_REF
 ]]></Declaration>
       <Get Name="Get" Id="{1d681339-1217-4bea-aef1-8609a0d655ec}">
@@ -37,8 +37,7 @@ END_VAR
       </Set>
     </Property>
     <Property Name="Axis2" Id="{6ecdcf21-1cdf-46e4-8949-476a2563d481}">
-      <Declaration><![CDATA[{error 'add property implementation or delete property to use base implementation'}
-PROPERTY Axis2 : Tc2_MC2.AXIS_REF
+      <Declaration><![CDATA[PROPERTY Axis2 : Tc2_MC2.AXIS_REF
 ]]></Declaration>
       <Get Name="Get" Id="{f7e9ffa1-dc79-4ccf-b122-b3213bc6f894}">
         <Declaration><![CDATA[VAR
@@ -58,15 +57,14 @@ END_VAR
       </Set>
     </Property>
     <Method Name="Execute" Id="{1db5a845-0ad9-4c13-bac5-eb33a1e9d23c}">
-      <Declaration><![CDATA[{error 'add method implementation or delete method to use base implementation'}
-METHOD Execute : BOOL
+      <Declaration><![CDATA[METHOD Execute : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Moving short-straight','');]]></ST>
       </Implementation>
     </Method>
     <Method Name="Reset" Id="{50267c05-81d4-4041-a35c-bbb42bb35d43}">
-      <Declaration><![CDATA[{error 'add method implementation or delete method to use base implementation'}
+      <Declaration><![CDATA[
 METHOD Reset : BOOL
 ]]></Declaration>
       <Implementation>
@@ -74,20 +72,45 @@ METHOD Reset : BOOL
       </Implementation>
     </Method>
     <Method Name="Start" Id="{99a1e3d0-bf7d-4fcd-aa1b-a42d40086359}">
-      <Declaration><![CDATA[{error 'add method implementation or delete method to use base implementation'}
-METHOD Start : BOOL
+      <Declaration><![CDATA[METHOD Start : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Powering Short-Straight on','');]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{83e93853-423e-49f5-ba6f-fc72c2765a82}">
-      <Declaration><![CDATA[{error 'add method implementation or delete method to use base implementation'}
-METHOD Stop : BOOL
+      <Declaration><![CDATA[METHOD Stop : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_LOG,'Stopping short-straight','');]]></ST>
       </Implementation>
     </Method>
+    <LineIds Name="FB_SsNcConveyer">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Axis1.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Axis1.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Axis2.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Axis2.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Execute">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Reset">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Start">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SsNcConveyer.Stop">
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

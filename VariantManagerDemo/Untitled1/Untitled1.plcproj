@@ -4,9 +4,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{d137d9a4-2522-4b1e-8394-2aefb487e839}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
-    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <DownloadApplicationInfo>false</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
-    <GenerateTpy>false</GenerateTpy>
+    <GenerateTpy>true</GenerateTpy>
     <Name>Untitled1</Name>
     <ProgramVersion>3.1.4024.12</ProgramVersion>
     <Application>{286f4a2e-25b6-45f5-84c7-cc8b4be2e99d}</Application>
@@ -80,9 +80,6 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN_HC.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
@@ -97,10 +94,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="MDR_Control">
-      <DefaultResolution>MDR_Control, * (BAUS)</DefaultResolution>
-      <Namespace>MDR_Control</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
